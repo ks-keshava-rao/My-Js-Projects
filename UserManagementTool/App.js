@@ -6,12 +6,16 @@
 const dataInput = document.querySelectorAll(".inputs")
 const submitbtn = document.getElementById("subbtn");
 submitbtn.addEventListener('click', submitData)
+const method = {
+    displayData : function(){
+        return(`${this.ename},${this.id},${this.role}`);
+    },
+    convertToArray: function(){
+        return [this];
+    }
+} 
 function submitData(e){
-    userData = {
-        displayData : function(){
-            console.log(`${this.ename},${this.id},${this.role}`);
-        }
-    };
+    userData = {};
     // e.preventDefault();
     const empName = dataInput[0];
     const empId = dataInput[1];
@@ -19,6 +23,9 @@ function submitData(e){
     userData.ename = empName.value;
     userData.id = empId.value;
     userData.role = role.value;
-    alert("Details" + userData.displayData() + "added succesfully");
+    let displaydata = method.displayData.call(userData);
+    let dataArray = method.convertToArray.call(userData);
+    // console.log(dataArray);
     
+    alert(`Details" ${displaydata}  "added succesfully`);
 }
