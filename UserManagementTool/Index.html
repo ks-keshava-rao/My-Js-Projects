@@ -25,15 +25,18 @@
         <div class="container">
             <div id="form">
                 <h1 id="h1">Enter the details</h1>
+                <form >
                 <p>Name</p>
-                <input class="in" id="in1" type="text">
+                <input class="inputs" id="in1" type="text" required>
                 <p>Employee id</p>
-                <input class="in" id="in2" type="text">
-                <p>Date of joining</p>
-                <input class="in" id="in2" type="text">
-            </div>
-            <button class="btn btn-hero" id="btn">Update</button>
-            
+                <input class="inputs" id="in2" type="text" required>
+                <p>Role</p>
+                <input class="inputs" id="in2" type="text" required>
+                
+            </div><br><br>
+            <input class="btn btn-hero" value="Submit details" id="subbtn" type="submit" name="submitbtn">
+            <!-- <button class="btn btn-hero" id="btn">Submit</button> -->
+        </form>
         </div>
     </main>
     <script src="App.js"></script>
