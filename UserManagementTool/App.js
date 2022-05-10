@@ -6,7 +6,6 @@
 const dataInput = document.querySelectorAll(".inputs")
 const submitbtn = document.getElementById("subbtn");
 submitbtn.addEventListener('click', submitData)
-userData = {};
 dataArray = [];
 const method = {
     displayData: function () {
@@ -15,7 +14,6 @@ const method = {
     convertToArray: function () {
         return [this];
     },
-
 }
 function validate(empName, empId, role) {
     if (empName.value == null || empName.value == "") {
@@ -36,7 +34,7 @@ function validate(empName, empId, role) {
 }
 function submitData(e) {
     e.preventDefault();
-   
+    userData = {};
     const empName = dataInput[0];
     const empId = dataInput[1];
     const role = dataInput[2];
