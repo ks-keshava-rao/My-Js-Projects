@@ -1,3 +1,4 @@
+// fetchedData=undefined;
 erasebtn = document.getElementById("clearbtn");
 erasebtn.addEventListener("click", cleardb);
 function cleardb() {
@@ -16,17 +17,19 @@ function cleardb() {
         }
     }
 }
+
 async function getAlldata() {
-    if (localStorage.length == 0) {
-        console.log("No data Availible");
+    if (localStorage.length == 0){
+        alert("No data Availible");
+        return;
     }
     else {
         fetchedData = await JSON.parse(localStorage.getItem('DataBase'));
+        return fetchedData;
     }
-    return fetchedData;
 }
 data = getAlldata();
-data.then(function(){
+data.then(function(fetchedData){
     console.log(fetchedData);
 }).catch(function(errors){
     console.error(errors);
