@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,26 +8,43 @@
     <title>User Management || Tool </title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <nav>
         <div class="nav-center">
-        <h4>Management Tool</h4>
-        <ul class="nav-links">
-            <li>
-                <a href="Index.html">Add data</a>
-            </li>
-            <li>
-                <a href="Display.html">Read or Update</a>
-            </li>
-        </ul>
-        </div>  
+            <h4>Management Tool</h4>
+            <ul class="nav-links">
+                <li>
+                    <a href="Index.html">Add data</a>
+                </li>
+                <li>
+                    <a href="Display.html">Read or Update</a>
+                </li>
+            </ul>
+        </div>
     </nav>
     <main>
-        
+        <div id="tablediv">
+        <table border="1" id="customers">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Employee id</th>
+                    <th>Role</th>
+                    <th>edit</th>
+                    <th>delete</th>
+                </tr>
+            <thead>
+                <tbody id="tabody">
+               
+            <tbody>
+        </table>
+    </div>
         <div class="container">
             <button class="btn btn-hero" id="clearbtn">Delete all data</button>
         </div>
     </main>
     <script src="displayapp.js"></script>
 </body>
+
 </html>
