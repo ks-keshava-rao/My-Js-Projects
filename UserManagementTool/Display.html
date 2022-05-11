@@ -24,6 +24,17 @@
         </div>
     </nav>
     <main>
+    <div class="formcontainer">
+        <form name="upateform">
+        <p>Name</p>
+        <input id = "uname"class="inputs" type="text">
+        <p>EmpID</p>
+        <input  id = "uid" class="inputs" type="text">
+        <p>Role</p>
+        <input  id = "urole" class="inputs" type="text"> <br> <br> 
+    </form>
+        <button id="update" class="btn-hero">Update data</button>
+    </div>    
         <div id="tablediv">
         <table border="1" id="customers">
             <thead>
@@ -39,10 +50,11 @@
                
             <tbody>
         </table>
+        
     </div>
-        <div class="container">
-            <button class="btn btn-hero" id="clearbtn">Delete all data</button>
-        </div>
+       
+            <button class="btn btn-hero btncon" id="clearbtn">Delete all data</button>
+       
     </main>
     <script src="displayapp.js"></script>
 </body>
