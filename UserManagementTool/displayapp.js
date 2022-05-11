@@ -1,7 +1,13 @@
 // fetchedData=undefined;
-erasebtn = document.getElementById("clearbtn");
+let referenceindex = undefined;
+let newarray = undefined;
+const erasebtn = document.getElementById("clearbtn");
 erasebtn.addEventListener("click", cleardb);
-
+const updatabtn = document.getElementById('update')
+.addEventListener('click',updatedata);
+const uname = document.getElementById("uname");
+const uid = document.getElementById("uid");
+const urole = document.getElementById("urole");
 function cleardb() {
 
     if (localStorage.length == 0) {
@@ -56,12 +62,14 @@ if (localStorage.length != 0) {
         console.error(errors);
     });
 }
-function deletedata(elementindex){
+function deletedata(elementindex,disp=true){
     storedata = getAlldata();
     storedata.then((alldata)=>{
         alldata.splice(elementindex,1)
         setdata(alldata);
-        alert("Data deleted succesfully from database")
+        if(disp){
+        alert("Data deleted succesfully from database");
+        }
         location.reload();
     }).catch((error)=>{
         console.error(error);
@@ -69,4 +77,47 @@ function deletedata(elementindex){
 }
 function setdata(newdata){
     localStorage.setItem('DataBase',JSON.stringify(newdata));
+}
+function editdata(index){
+    getAlldata().then(function(datafetched){
+        referenceindex = index;
+        newarray = datafetched;
+        // console.log(datafetched[index].ename);
+        uname.value = datafetched[index].ename;
+        uid.value = datafetched[index].id;
+        urole.value = datafetched[index].role;
+    })
+}
+function uvalidate(empName,empId,role){
+    if (empName.value == null || empName.value == "") {
+        alert("Name cannot be blank");
+        return false;
+    }
+    else if (empId.value == "" || empId.value == null) {
+        alert("ID cannot be empty");
+        return false;
+    }
+    else if (role.value == "" || role.value == null) {
+        alert("role cannot be empty");
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+function updatedata(){
+    const newUdata = {}
+    if(uvalidate(uname,uid,urole))
+    {
+        newUdata.ename = uname.value;
+        newUdata.id = uid.value;
+        newUdata.role = urole.value;
+        newarray.push(newUdata);
+        setdata(newarray);
+        deletedata(referenceindex,false);
+        location.reload();
+    }
+    else{
+        alert("Data not updated");
+    }
 }
