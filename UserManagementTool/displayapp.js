@@ -1,10 +1,18 @@
 // fetchedData=undefined;
 let referenceindex = undefined;
 let newarray = undefined;
+let state = false;
 const erasebtn = document.getElementById("clearbtn");
 erasebtn.addEventListener("click", cleardb);
 const updatabtn = document.getElementById('update')
-.addEventListener('click',updatedata);
+.addEventListener('click',()=>{
+    if(state==false){
+        alert("only used to edit data")
+    }
+    else if(state==true){
+        updatedata();
+    }
+});
 const uname = document.getElementById("uname");
 const uid = document.getElementById("uid");
 const urole = document.getElementById("urole");
@@ -63,7 +71,7 @@ if (localStorage.length != 0) {
     });
 }
 function deletedata(elementindex,disp=true){
-    storedata = getAlldata();
+    const storedata = getAlldata();
     storedata.then((alldata)=>{
         alldata.splice(elementindex,1)
         setdata(alldata);
@@ -79,6 +87,7 @@ function setdata(newdata){
     localStorage.setItem('DataBase',JSON.stringify(newdata));
 }
 function editdata(index){
+    state = true;
     getAlldata().then(function(datafetched){
         referenceindex = index;
         newarray = datafetched;
