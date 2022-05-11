@@ -10,8 +10,25 @@ Fonts
 Variables
 ===============
 */
+.btncon{
+  position : relative;
+  top: -100px;
+}
+.formcontainer{
+  left: -300px;
+  position : relative;
+  top : 100px;
+}
 #tablediv{
   overflow-y: scroll;
+  background-color: #fff;
+  float: left;
+  width: 500px;
+  height: 300px;
+  border-radius:8px ;
+  left: 300px;
+  position: relative;
+  top: -150px;
 }
 #customers {
   font-family: Arial, Helvetica, sans-serif;
