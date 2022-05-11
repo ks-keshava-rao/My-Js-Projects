@@ -52,6 +52,7 @@ function submitData(e) {
         alert("data not updated")
     }
 }
-function setData(){
-    localStorage.setItem('DataBase',JSON.stringify(dataArray));
+function setData() {
+    localStorage.setItem('DataBase', JSON.stringify(dataArray));
 }
+/* Date - 11-May-2022  */
