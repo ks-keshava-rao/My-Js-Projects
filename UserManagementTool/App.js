@@ -6,7 +6,7 @@
 const dataInput = document.querySelectorAll(".inputs")
 const submitbtn = document.getElementById("subbtn");
 submitbtn.addEventListener('click', submitData)
-dataArray = [];
+let dataArray = [];
 const method = {
     displayData: function () {
         return (`${this.ename},${this.id},${this.role}`);
