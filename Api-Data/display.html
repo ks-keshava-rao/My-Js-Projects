@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management || Tool </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="nav-center">
+            <h4>Management Tool</h4>
+            <ul class="nav-links">
+                <li>
+                    <a href="Index.html" onclick="event.preventDefault()">Add data</a>
+                </li>
+                <li>
+                    <a href="Display.html" id="trigger" onclick="event.preventDefault()">Read or Update</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="formcontainer">
+            <form name="upateform">
+                <p>Login</p>
+                <input id="uname" class="inputs" type="text">
+                <p>ID</p>
+                <input id="uid" class="inputs" type="text">
+                <p>Node_id</p>
+                <input id="nodeid" class="inputs" type="text"> <br> <br>
+            </form>
+            <button id="update" class="btn-hero">Update data</button>
+        </div>
+        <div id="tablediv">
+            <table border="1" id="customers">
+                <thead>
+                    <tr>
+                        <!-- <th>Sno.</th> -->
+                        <th>Login</th>
+                        <th>Id</th>
+                        <th>Node_id</th>
+                        <th>edit</th>
+                        <th>delete</th>
+                    </tr>
+                    <thead>
+                    <tbody id="tabody">
+                <tbody>
+            </table>
+
+        </div>
+
+        <button class="btn btn-hero btncon" id="clearbtn">Delete all data</button>
+
+    </main>
+    <script src="app.js"></script>
+ </body>
+</html>
