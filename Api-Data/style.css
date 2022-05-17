@@ -10,6 +10,11 @@ Fonts
 Variables
 ===============
 */
+#msg{
+  bottom: -56px;
+  right: -726px;
+  position: relative;
+}
 .btncon {
   position: relative;
   top: -100px;
